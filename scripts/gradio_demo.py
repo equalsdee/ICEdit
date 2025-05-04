@@ -19,6 +19,8 @@ import random
 from diffusers import FluxFillPipeline
 from PIL import Image
 
+PORT = environ.get('PORT', 7860)
+
 MAX_SEED = np.iinfo(np.int32).max
 MAX_IMAGE_SIZE = 1024
 
@@ -212,4 +214,4 @@ For more details, check out our [Github Repository](https://github.com/River-Zha
         outputs=[result, seed]
     )
 
-demo.launch(server_port=args.port)
+demo.launch(server_name='0.0.0.0', server_port=int(PORT))
