@@ -19,7 +19,7 @@ import random
 from diffusers import FluxFillPipeline
 from PIL import Image
 
-PORT = environ.get('PORT', 7860)
+PORT = os.environ.get('PORT', 7860)
 
 MAX_SEED = np.iinfo(np.int32).max
 MAX_IMAGE_SIZE = 1024
